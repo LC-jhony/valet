@@ -151,6 +151,7 @@ The full design, technology decision and module map are in
 
 ## Documentation
 
+- [Wiki de uso y comandos (español)](wiki/Home.md)
 - [Architecture and technology decision](docs/ARCHITECTURE.md)
 - [Migration and recovery](docs/MIGRATION.md)
 - [Themes and accessibility](docs/THEMES.md)
