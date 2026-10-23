@@ -1,0 +1,61 @@
+VALET Desktop
+==============
+
+VALET Desktop is an independent desktop interface and CLI for the Lerd local
+PHP development engine. It is not a reimplementation of the engine and does not
+include the engine binary in this source repository.
+
+Upstream engine
+---------------
+
+Lerd — Podman-powered local PHP development environment
+Copyright (c) 2026 George Dumitrescu <george@dumitres.co>
+Licensed under the MIT License.
+https://github.com/lerd-env/lerd
+https://lerd.sh
+
+VALET preserves the engine's binary name, API paths, configuration files,
+containers, volumes, images, certificates, project markers and persisted data.
+The engine is installed and licensed separately.
+
+Themes
+------
+
+Min Dark and Min Light theme JSON are based on Min Theme.
+Copyright (c) 2018-2021 Miguel Solorio
+Licensed under the MIT License.
+https://github.com/miguelsolorio/min-theme
+
+The theme JSON files are used as the visual source of truth. VALET's adapter
+derives semantic CSS variables and an xterm palette without creating a new
+brand palette.
+
+Desktop dependencies
+--------------------
+
+Electron, React, React DOM, Vite, xterm.js, the xterm fit addon, lucide-react,
+TypeScript, Vitest and electron-builder are distributed under their respective
+licenses. Their license texts are available in `node_modules/<package>` and in
+the packaged application's dependency notices.
+
+Not included
+------------
+
+- The Lerd engine binary.
+- PHP, Podman, Nginx, MySQL, PostgreSQL, Redis or other runtime services.
+- phpMyAdmin. VALET retires it from active features; a pre-existing container
+  can be removed explicitly but its data is not deleted by VALET.
+- Any user project, database dump, certificate private key or credential.
+
+Name note
+---------
+
+Laravel Valet also uses the command name `valet`. VALET's installer deliberately
+refuses to overwrite an existing unrelated `valet` executable. This project is
+not affiliated with Laravel, Lerd or the Min Theme author beyond the license and
+compatibility notices above.
+
+No warranty
+-----------
+
+The software is provided "as is", without warranty of any kind. See LICENSE.

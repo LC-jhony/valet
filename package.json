@@ -1,0 +1,100 @@
+{
+  "name": "valet-desktop",
+  "productName": "VALET",
+  "version": "1.0.0",
+  "description": "VALET — minimal desktop control plane for local PHP development environments",
+  "license": "MIT",
+  "homepage": "https://github.com/lerd-env/lerd",
+  "author": {
+    "name": "VALET Desktop contributors",
+    "email": "valet-desktop@users.noreply.github.com"
+  },
+  "desktopName": "valet.desktop",
+  "main": "dist/electron/electron/main.js",
+  "bin": {
+    "valet": "bin/valet"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "npm run build:renderer && npm run build:electron && npm run build:cli",
+    "build:renderer": "vite build",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "build:cli": "node scripts/build-cli.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.electron.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "electron .",
+    "smoke": "node scripts/smoke.mjs",
+    "package": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "lucide-react": "^1.61.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "electron": "^45.0.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "jsdom": "^30.1.3",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  },
+  "build": {
+    "appId": "sh.valet.desktop",
+    "productName": "VALET",
+    "artifactName": "valet-desktop-${version}-${os}-${arch}.${ext}",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "bin/**/*",
+      "package.json",
+      "NOTICE",
+      "LICENSE"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Development",
+      "icon": "build/icon.png",
+      "syncDesktopName": true,
+      "synopsis": "Minimal desktop control plane for local PHP development"
+    },
+    "appImage": {
+      "executableArgs": []
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.developer-tools",
+      "icon": "build/icon.png"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
