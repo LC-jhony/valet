@@ -63,7 +63,7 @@ export function defaultConfig(): ValetConfig {
     enginePath: null,
     lastProject: null,
     recentProjects: [],
-    sidebarWidth: 248,
+    sidebarWidth: 272,
     telemetry: false,
   };
 }

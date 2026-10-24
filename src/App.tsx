@@ -189,7 +189,7 @@ export function App(): React.ReactElement {
   }, [app]);
 
   const style = {
-    '--sidebar-w': `${app.config?.sidebarWidth ?? 248}px`,
+    '--sidebar-w': `${app.config?.sidebarWidth ?? 272}px`,
   } as React.CSSProperties;
 
   return (
