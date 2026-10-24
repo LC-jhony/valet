@@ -4,14 +4,14 @@ import type { ViewId } from '../../shared/types';
 import { useApp } from '../state/store';
 
 const ICONS: Record<ViewId, React.ReactNode> = {
-  projects: <FolderKanban size={13} />,
-  php: <Braces size={13} />,
-  services: <Boxes size={13} />,
-  ports: <Network size={13} />,
-  databases: <Database size={13} />,
-  terminal: <SquareTerminal size={13} />,
-  logs: <ScrollText size={13} />,
-  settings: <Settings size={13} />,
+  projects: <FolderKanban size={14} />,
+  php: <Braces size={14} />,
+  services: <Boxes size={14} />,
+  ports: <Network size={14} />,
+  databases: <Database size={14} />,
+  terminal: <SquareTerminal size={14} />,
+  logs: <ScrollText size={14} />,
+  settings: <Settings size={14} />,
 };
 
 export function TabBar(): React.ReactElement {

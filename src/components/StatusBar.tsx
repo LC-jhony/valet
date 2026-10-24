@@ -43,7 +43,7 @@ export function StatusBar(): React.ReactElement {
         ) : null}
         {app.refreshing ? (
           <span className="statusbar__item statusbar__item--static">
-            <RefreshCw size={11} className="spin" /> refreshing
+            <RefreshCw size={12} className="spin" /> refreshing
           </span>
         ) : null}
       </div>
@@ -51,15 +51,15 @@ export function StatusBar(): React.ReactElement {
       <div className="statusbar__group statusbar__group--right">
         {conflicts > 0 ? (
           <button type="button" className="statusbar__item statusbar__item--error" onClick={() => app.openView('ports')} title="Port conflicts">
-            <AlertTriangle size={11} /> {conflicts} conflict{conflicts === 1 ? '' : 's'}
+            <AlertTriangle size={12} /> {conflicts} conflict{conflicts === 1 ? '' : 's'}
           </button>
         ) : (
           <button type="button" className="statusbar__item" onClick={() => app.openView('ports')} title="Open ports">
-            <Network size={11} /> ports ok
+            <Network size={12} /> ports ok
           </button>
         )}
         <button type="button" className="statusbar__item" onClick={() => app.openView('services')} title="Open services">
-          <Boxes size={11} /> {running}/{app.services.length} services
+          <Boxes size={12} /> {running}/{app.services.length} services
         </button>
         <button
           type="button"
@@ -67,7 +67,7 @@ export function StatusBar(): React.ReactElement {
           onClick={() => void app.setTheme(nextTheme)}
           title={`Switch theme (current: ${theme?.name ?? themeId})`}
         >
-          {theme?.type === 'light' ? <Sun size={11} /> : <Moon size={11} />}
+          {theme?.type === 'light' ? <Sun size={12} /> : <Moon size={12} />}
           {theme?.name ?? themeId}
         </button>
         <button type="button" className="statusbar__item" onClick={() => app.openView('settings')} title="About VALET">

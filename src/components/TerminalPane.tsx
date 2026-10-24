@@ -32,8 +32,8 @@ export function TerminalPane({
     if (!host) return;
     const term = new Terminal({
       fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace',
-      fontSize: 12,
-      lineHeight: 1.25,
+      fontSize: 14,
+      lineHeight: 1.3,
       letterSpacing: 0,
       cursorBlink: true,
       cursorStyle: 'bar',

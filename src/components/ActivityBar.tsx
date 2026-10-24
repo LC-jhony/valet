@@ -5,13 +5,13 @@ import { VIEW_META } from '../../shared/format';
 import { useApp } from '../state/store';
 
 const ITEMS: Array<{ view: ViewId; icon: React.ReactNode; badge?: 'conflicts' }> = [
-  { view: 'projects', icon: <FolderKanban size={19} /> },
-  { view: 'php', icon: <Braces size={19} /> },
-  { view: 'services', icon: <Boxes size={19} /> },
-  { view: 'ports', icon: <Network size={19} />, badge: 'conflicts' },
-  { view: 'databases', icon: <Database size={19} /> },
-  { view: 'terminal', icon: <SquareTerminal size={19} /> },
-  { view: 'logs', icon: <ScrollText size={19} /> },
+  { view: 'projects', icon: <FolderKanban size={20} /> },
+  { view: 'php', icon: <Braces size={20} /> },
+  { view: 'services', icon: <Boxes size={20} /> },
+  { view: 'ports', icon: <Network size={20} />, badge: 'conflicts' },
+  { view: 'databases', icon: <Database size={20} /> },
+  { view: 'terminal', icon: <SquareTerminal size={20} /> },
+  { view: 'logs', icon: <ScrollText size={20} /> },
 ];
 
 export function ActivityBar(): React.ReactElement {
@@ -45,7 +45,7 @@ export function ActivityBar(): React.ReactElement {
           title={`Settings (${VIEW_META.settings.shortcut})`}
           onClick={() => app.openView('settings')}
         >
-          <Settings size={19} />
+          <Settings size={20} />
         </button>
       </div>
     </nav>
